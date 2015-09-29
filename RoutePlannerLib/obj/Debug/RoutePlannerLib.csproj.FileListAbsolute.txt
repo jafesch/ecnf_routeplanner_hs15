@@ -1,0 +1,5 @@
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\bin\Debug\RoutePlannerLib.dll
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\bin\Debug\RoutePlannerLib.pdb
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\obj\Debug\RoutePlannerLib.csprojResolveAssemblyReference.cache
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\obj\Debug\RoutePlannerLib.dll
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\obj\Debug\RoutePlannerLib.pdb
