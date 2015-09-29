@@ -28,3 +28,6 @@ C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informat
 C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\#ecnf\ecnf_routeplanner_hs15\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.csprojResolveAssemblyReference.cache
 C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\#ecnf\ecnf_routeplanner_hs15\RoutePlannerConsole\obj\Debug\Fhnw.Ecnf.RoutePlanner.RoutePlannerConsole.Properties.Resources.resources
 C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\#ecnf\ecnf_routeplanner_hs15\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.csproj.GenerateResource.Cache
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerConsole\bin\Debug\citiesTestDataLab2.txt
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerConsole\obj\Debug\Fhnw.Ecnf.RoutePlanner.RoutePlannerConsole.Properties.Resources.resources
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.csproj.GenerateResource.Cache

@@ -11,3 +11,16 @@ C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informat
 C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\#ecnf\ecnf_routeplanner_hs15\RoutePlannerTest\obj\Debug\RoutePlannerTest.csprojResolveAssemblyReference.cache
 C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\#ecnf\ecnf_routeplanner_hs15\RoutePlannerTest\obj\Debug\RoutePlannerTest.dll
 C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\#ecnf\ecnf_routeplanner_hs15\RoutePlannerTest\obj\Debug\RoutePlannerTest.pdb
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\citiesTestDataLab2.txt
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\Data\citiesTestDataLab2.txt
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\RoutePlannerTest.dll
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\RoutePlannerTest.pdb
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\RoutePlannerConsole.exe
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\RoutePlannerLib.dll
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\RoutePlannerConsole.pdb
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\RoutePlannerLib.pdb
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\obj\Debug\RoutePlannerTest.csprojResolveAssemblyReference.cache
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\obj\Debug\RoutePlannerTest.dll
+C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerTest\obj\Debug\RoutePlannerTest.pdb
