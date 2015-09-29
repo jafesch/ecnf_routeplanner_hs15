@@ -33,7 +33,10 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerConsole
             Console.WriteLine(bern.Distance(tripolis));
             Console.WriteLine(tripolis.Distance(bern));
 
-
+            //Lab2 Aufgabe 2b - FunktionsTest
+            Cities c = new Cities();
+            c.ReadCities("citiesTestDataLab2.txt");
+            Console.WriteLine("Test: {0}", c[0].ToString());
 
             Console.ReadLine();
         }

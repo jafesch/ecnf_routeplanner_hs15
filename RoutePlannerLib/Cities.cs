@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 {
-    class Cities
+    public class Cities
     {
         List<City> cities = new List<City>();
         public int Count { get { return cities.Count; } }
