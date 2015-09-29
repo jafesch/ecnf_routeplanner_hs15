@@ -3,3 +3,8 @@ C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerL
 C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\obj\Debug\RoutePlannerLib.csprojResolveAssemblyReference.cache
 C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\obj\Debug\RoutePlannerLib.dll
 C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerLib\obj\Debug\RoutePlannerLib.pdb
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerLib\bin\Debug\RoutePlannerLib.dll
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerLib\bin\Debug\RoutePlannerLib.pdb
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerLib\obj\Debug\RoutePlannerLib.csprojResolveAssemblyReference.cache
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerLib\obj\Debug\RoutePlannerLib.dll
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerLib\obj\Debug\RoutePlannerLib.pdb

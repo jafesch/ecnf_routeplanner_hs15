@@ -10,6 +10,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
     class Cities
     {
         List<City> cities = new List<City>();
+        public int Count { get { return cities.Count; } }
         public int ReadCities(string _filename)
         {
             string line;
@@ -23,6 +24,17 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
             file.Close();
             return cities.Count;
+        }
+        public City this[int i]
+        {
+            get
+            {
+                if (i < Count) { return cities[i]; } else { return null; throw new IndexOutOfRangeException("Index not aviable!"); }
+            }
+        }
+        public IEnumerable<City> FindNeighbours(WayPoint _location, double _distance)
+        {
+            return cities.Where(c => _location.Distance(c.Location) <= _distance).ToList();
         }
     }
 }

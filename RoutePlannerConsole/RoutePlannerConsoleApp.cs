@@ -33,6 +33,8 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerConsole
             Console.WriteLine(bern.Distance(tripolis));
             Console.WriteLine(tripolis.Distance(bern));
 
+
+
             Console.ReadLine();
         }
     }
