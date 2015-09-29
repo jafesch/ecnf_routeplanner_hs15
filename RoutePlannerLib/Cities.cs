@@ -18,8 +18,11 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
             while ((line = file.ReadLine()) != null)    // Read the file and display it line by line.
             {
                 //Console.WriteLine(line);
-                string[] splited = line.Split();
-                cities.Add(new City(splited[0], splited[1], Int32.Parse(splited[2]), Double.Parse(splited[3]), Double.Parse(splited[4])));
+                string[] splited = line.Split('\t');
+                int _tempPop = Int32.Parse(splited[2]);
+                double _tempLati = Double.Parse(splited[3]);
+                double _tempLong = Double.Parse(splited[4]);
+                cities.Add(new City(splited[0], splited[1], _tempPop, _tempLati, _tempLong));
             }
 
             file.Close();
