@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,16 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         public override string ToString()
         {
-            if (Name == null || Name == "")
+            if (string.IsNullOrEmpty(Name))
             {
-                return String.Format("WayPoint: {0:N2}/{1:N2}", Latitude, Longitude);
+                return String.Format(CultureInfo.InvariantCulture, "WayPoint: {0:N2}/{1:N2}", Latitude, Longitude);
             }
             else
             {
-                return String.Format("WayPoint: {0} {1:N2}/{2:N2}", Name, Latitude, Longitude);
+                return String.Format(CultureInfo.InvariantCulture, "WayPoint: {0} {1:N2}/{2:N2}", Name, Latitude, Longitude);
             }
+
+            /*if (Name == null || Name == "")*/
         }
 
         public double Distance(WayPoint _target)

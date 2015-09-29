@@ -33,10 +33,14 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerConsole
             Console.WriteLine(bern.Distance(tripolis));
             Console.WriteLine(tripolis.Distance(bern));
 
-            //Lab2 Aufgabe 2b - FunktionsTest
+            //Lab2 Aufgabe 2b - FunktionsTest - Funktioniert
             Cities c = new Cities();
             c.ReadCities("citiesTestDataLab2.txt");
             Console.WriteLine("Test: {0}", c[0].Name);
+
+            var target = new WayPoint("Windisch", 0.564, 0.646);
+            Console.WriteLine(target.ToString() + " vs. " + "WayPoint: Windisch 0.56/0.65");
+
 
             Console.ReadLine();
         }
