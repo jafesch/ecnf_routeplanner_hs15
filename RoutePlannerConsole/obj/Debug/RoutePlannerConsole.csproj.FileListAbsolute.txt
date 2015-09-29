@@ -6,3 +6,6 @@ C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerC
 C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.csprojResolveAssemblyReference.cache
 C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.exe
 C:\Users\Julian\Documents\FHNW\ecnf\newProject\RoutePlannerConsole\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.pdb
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerConsole\bin\Debug\RoutePlannerConsole.exe.config
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.exe
+C:\Users\SVS13A1C5E\Documents\Informatik FHNW Brugg\8. Semester HS 2015 Informatik\Einführung C# und .Net\# ecnf - Def - GitHub\ecnf_routeplanner_hs15\RoutePlannerConsole\obj\Debug\RoutePlannerConsole.pdb

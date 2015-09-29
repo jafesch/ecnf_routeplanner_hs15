@@ -12,20 +12,17 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
         List<City> cities = new List<City>();
         public int ReadCities(string _filename)
         {
-            try
+            string line;
+            System.IO.StreamReader file = new System.IO.StreamReader(_filename);
+            while ((line = file.ReadLine()) != null)    // Read the file and display it line by line.
             {
-                using (TextReader reader = new StreamReader(_filename))
-                {
-                    IEnumerable<string[]> citiesAsStrings = reader. .GetSplittedLines('\t');
-                    IEnumerable<City> c = citiesAsStrings.Select(city => new City(city[0].ToString(), city[1].ToString(), int.Parse(city[2]), double.Parse(city[3], CultureInfo.InvariantCulture), double.Parse(city[4], CultureInfo.InvariantCulture))).ToArray();
-                    cities.AddRange(c);
-                    return c.Count();
-                }
+                //Console.WriteLine(line);
+                string[] splited = line.Split();
+                cities.Add(new City(splited[0], splited[1], Int32.Parse(splited[2]), Double.Parse(splited[3]), Double.Parse(splited[4])));
             }
-            catch (FileNotFoundException e)
-            {
-            }
-            return -1;
+
+            file.Close();
+            return cities.Count;
         }
     }
 }
