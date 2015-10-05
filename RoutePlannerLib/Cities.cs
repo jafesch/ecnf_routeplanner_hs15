@@ -12,6 +12,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
     {
         List<City> cities = new List<City>();
         public int Count { get { return cities.Count; } }
+
         public int ReadCities(string _filename)
         {
             string line;
@@ -31,6 +32,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
             file.Close();
             return citiesAdded;
         }
+
         public City this[int i]
         {
             get
@@ -42,6 +44,27 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                 }
             }
         }
+
+        public City this[string _cityName]
+        {
+            get
+            {
+                var foundCity = cities.Find(delegate(City c)
+                {
+                    return c.Name.Equals(_cityName, StringComparison.InvariantCultureIgnoreCase);
+                });
+
+                if (foundCity != null)
+                {
+                    return foundCity;
+                }
+                else
+                {
+                    throw new KeyNotFoundException("City not found");
+                }
+            }
+        }
+
         public IEnumerable<City> FindNeighbours(WayPoint _location, double _distance)
         {
             List<City> citiesTemp = new List<City>();
