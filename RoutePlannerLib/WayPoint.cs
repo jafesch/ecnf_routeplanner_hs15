@@ -10,9 +10,11 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
     public class WayPoint
     {
         private const double EARTHRADIUS = 6371d;
-        public string Name { get; set; }
-        public double Longitude { get; set; }
         public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public string Name { get; set; }
+
+        public WayPoint () { }
 
         public WayPoint(string _name, double _latitude, double _longitude)
         {
