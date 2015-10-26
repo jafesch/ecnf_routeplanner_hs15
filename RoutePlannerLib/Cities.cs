@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fhnw.Ecnf.RoutePlanner.RoutePlannerLib.Util;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -15,22 +16,22 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         public int ReadCities(string _filename)
         {
-            string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(_filename);
-            var citiesAdded = 0;
-            while ((line = file.ReadLine()) != null)    // Read the file and display it line by line.
+            using (TextReader reader = new StreamReader(_filename))
             {
-                //Console.WriteLine(line);
-                string[] splited = line.Split('\t');
-                int _tempPop = Int32.Parse(splited[2], CultureInfo.InvariantCulture);
-                double _tempLati = Double.Parse(splited[3], CultureInfo.InvariantCulture);
-                double _tempLong = Double.Parse(splited[4], CultureInfo.InvariantCulture);
-                cities.Add(new City(splited[0], splited[1], _tempPop, _tempLati, _tempLong));
-                citiesAdded++;
-            }
+                IEnumerable<string[]> citiesAsStrings = reader.GetSplittedLines('\t');
+                var citiesAdded = 0;
 
-            file.Close();
-            return citiesAdded;
+                foreach (var line in citiesAsStrings)
+                {
+                    int _tempPop = Int32.Parse(line[2], CultureInfo.InvariantCulture);
+                    double _tempLati = Double.Parse(line[3], CultureInfo.InvariantCulture);
+                    double _tempLong = Double.Parse(line[4], CultureInfo.InvariantCulture);
+                    cities.Add(new City(line[0], line[1], _tempPop, _tempLati, _tempLong));
+                    citiesAdded++;
+                }
+
+                return citiesAdded;
+            }
         }
 
         public City this[int i]
