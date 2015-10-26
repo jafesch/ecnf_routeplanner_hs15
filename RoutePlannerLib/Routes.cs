@@ -73,11 +73,19 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 			return Count;
 		}
 
-		//public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode)
-		//{
-  //          RouteRequested?.Invoke(this, new RouteRequestEventArgs(cities[_fromCity], cities[_toCity], _mode));
-  //          return new List<Link>();
-		//}
+        public City[] FindCities(TransportMode transportMode)
+        {
+            return routes.Where(r1 => r1.TransportMode == transportMode)
+                .SelectMany(r2 => new[] { r2.FromCity, r2.ToCity })
+                .Distinct()
+                .ToArray();
+        }
+
+        //public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode)
+        //{
+        //          RouteRequested?.Invoke(this, new RouteRequestEventArgs(cities[_fromCity], cities[_toCity], _mode));
+        //          return new List<Link>();
+        //}
 
         #region Lab04: Dijkstra implementation
         public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode)

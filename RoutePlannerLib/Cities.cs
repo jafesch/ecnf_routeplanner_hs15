@@ -18,19 +18,11 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
         {
             using (TextReader reader = new StreamReader(_filename))
             {
-                IEnumerable<string[]> citiesAsStrings = reader.GetSplittedLines('\t');
-                var citiesAdded = 0;
-
-                foreach (var line in citiesAsStrings)
-                {
-                    int _tempPop = Int32.Parse(line[2], CultureInfo.InvariantCulture);
-                    double _tempLati = Double.Parse(line[3], CultureInfo.InvariantCulture);
-                    double _tempLong = Double.Parse(line[4], CultureInfo.InvariantCulture);
-                    cities.Add(new City(line[0], line[1], _tempPop, _tempLati, _tempLong));
-                    citiesAdded++;
-                }
-
-                return citiesAdded;
+                var citiesAsStrings = reader.GetSplittedLines('\t');
+                var c = citiesAsStrings.Select(city => new City(city[0].ToString(), city[1].ToString(), int.Parse(city[2]),
+                    double.Parse(city[3], CultureInfo.InvariantCulture), double.Parse(city[4], CultureInfo.InvariantCulture))).ToArray();
+                cities.AddRange(c);
+                return c.Count();
             }
         }
 
@@ -68,16 +60,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         public IEnumerable<City> FindNeighbours(WayPoint _location, double _distance)
         {
-            List<City> citiesTemp = new List<City>();
-            for (int i = 0; i < cities.Count; i++)
-            {
-                if (_location.Distance(cities[i].Location) <= _distance)
-                {
-                    citiesTemp.Add(cities[i]);
-                }
-            }
-
-            return citiesTemp;
+            return cities.Where(c => _location.Distance(c.Location) <= _distance).ToList();
         }
     }
 }
