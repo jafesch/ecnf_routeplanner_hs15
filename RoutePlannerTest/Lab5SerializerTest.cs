@@ -250,7 +250,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerTest
 
         internal int ShouldNotBeSerialized1 { get; set; }
         private int ShouldNotBeSerialized2 { get; set; }
-        public int ShouldNotBeSerialized3;
+        //public int ShouldNotBeSerialized3;
 
 
         public SerializeTest()

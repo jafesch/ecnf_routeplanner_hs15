@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -56,6 +57,7 @@
     <Compile Include="Lab5SerializerTest.cs" />
     <Compile Include="Lab5Test.cs" />
     <Compile Include="Lab6Test.cs" />
+    <Compile Include="Lab7Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
