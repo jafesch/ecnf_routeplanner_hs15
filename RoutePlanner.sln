@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutePlannerLib", "RoutePla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutePlannerTest", "RoutePlannerTest\RoutePlannerTest.csproj", "{047117FA-8018-4484-8497-B71DF079C5FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarbageCollectorTest", "GarbageCollectorTest\GarbageCollectorTest.csproj", "{B426B606-6CFA-424B-8926-54D1DF76AA08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{047117FA-8018-4484-8497-B71DF079C5FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{047117FA-8018-4484-8497-B71DF079C5FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{047117FA-8018-4484-8497-B71DF079C5FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B426B606-6CFA-424B-8926-54D1DF76AA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B426B606-6CFA-424B-8926-54D1DF76AA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B426B606-6CFA-424B-8926-54D1DF76AA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B426B606-6CFA-424B-8926-54D1DF76AA08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

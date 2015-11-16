@@ -1,6 +1,7 @@
 ﻿using Fhnw.Ecnf.RoutePlanner.RoutePlannerLib.Util;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -11,19 +12,36 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 {
     public class Cities
     {
+        private static readonly TraceSource traceSource = new TraceSource("Cities");
+        private static readonly TraceSource traceSourceErrors = new TraceSource("CitiesErrors");
+
         List<City> cities = new List<City>();
         public int Count { get { return cities.Count; } }
 
         public int ReadCities(string _filename)
         {
-            using (TextReader reader = new StreamReader(_filename))
+            traceSource.TraceInformation("ReadCities started");
+            traceSource.Flush();
+            try
             {
-                var citiesAsStrings = reader.GetSplittedLines('\t');
-                var c = citiesAsStrings.Select(city => new City(city[0].ToString(), city[1].ToString(), int.Parse(city[2]),
-                    double.Parse(city[3], CultureInfo.InvariantCulture), double.Parse(city[4], CultureInfo.InvariantCulture))).ToArray();
-                cities.AddRange(c);
-                return c.Count();
+                using (TextReader reader = new StreamReader(_filename))
+                {
+                    var citiesAsStrings = reader.GetSplittedLines('\t');
+                    var c = citiesAsStrings.Select(city => new City(city[0].ToString(), city[1].ToString(), int.Parse(city[2]),
+                        double.Parse(city[3], CultureInfo.InvariantCulture), double.Parse(city[4], CultureInfo.InvariantCulture))).ToArray();
+                    cities.AddRange(c);
+                    traceSource.TraceInformation("ReadCities ended");
+                    traceSource.Flush();
+                    traceSource.Close();
+                    return c.Count();
+                }
             }
+            catch (FileNotFoundException e)
+            {
+                traceSourceErrors.TraceData(TraceEventType.Critical, 1, e.StackTrace);
+                traceSource.Flush();
+            }
+            return -1;
         }
 
         public City this[int i]

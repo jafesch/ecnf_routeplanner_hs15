@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
 using Fhnw.Ecnf.RoutePlanner.RoutePlannerLib;
+using System.Diagnostics;
 
 namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 {
@@ -17,8 +18,10 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         private List<Link> routes = new List<Link>();
 		private Cities cities;
+        private static readonly TraceSource traceSource = new TraceSource("Routes");
+        private static readonly TraceSource traceSourceErrors = new TraceSource("RoutesErrors");
 
-		public int Count
+        public int Count
 		{
 			get
 			{
@@ -43,35 +46,47 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 		///	<returns>number	of read	route</returns>
 		public int ReadRoutes(string _filename)
 		{
-			using (var reader = new StreamReader(_filename))
-			{
-				string line;
-				while ((line = reader.ReadLine()) != null)
-				{
-					var tokens = line.Split('\t');
+            try { 
+			    using (var reader = new StreamReader(_filename))
+			    {
+                    traceSource.TraceInformation("ReadRoutes started");
+                    traceSource.Flush();
 
-                    City city1;
-                    City city2;
-                    try
-                    {
-                        city1 = cities[tokens[0]];
-                        city2 = cities[tokens[1]];
-                    }
-                    catch (Exception)
-                    {
-                        city1 = null;
-                        city2 = null;
-                    }
+                    string line;
+				    while ((line = reader.ReadLine()) != null)
+				    {
+					    var tokens = line.Split('\t');
+
+                        City city1;
+                        City city2;
+                        try
+                        {
+                            city1 = cities[tokens[0]];
+                            city2 = cities[tokens[1]];
+                        }
+                        catch (Exception)
+                        {
+                            city1 = null;
+                            city2 = null;
+                        }
 					
 					
-					// only add links, where both cities are found 
-					if ((city1 != null)	&& (city2 != null))
-						routes.Add(new Link(city1, city2, city1.Location.Distance(city2.Location), TransportMode.Rail));
-				}
-			}
-			
-			return Count;
-		}
+				    	// only add links, where both cities are found 
+			    		if ((city1 != null)	&& (city2 != null))
+				    		routes.Add(new Link(city1, city2, city1.Location.Distance(city2.Location), TransportMode.Rail));
+				    }
+		    	}
+                traceSource.TraceInformation("ReadRoutes ended");
+                traceSource.Flush();
+                return Count;
+            }
+            catch (FileNotFoundException e)
+            {
+                traceSourceErrors.TraceData(TraceEventType.Critical, 1, e.StackTrace);
+                traceSource.Flush();
+            }
+            return -1;
+        }
 
         public City[] FindCities(TransportMode transportMode)
         {
