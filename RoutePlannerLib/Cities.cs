@@ -40,6 +40,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
             {
                 traceSourceErrors.TraceData(TraceEventType.Critical, 1, e.StackTrace);
                 traceSource.Flush();
+                throw(e);
             }
             return -1;
         }
