@@ -160,12 +160,12 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         public async Task<List<Link>> FindShortestRouteBetweenAsync(string _fromCity, string _toCity, TransportMode _mode, IProgress<string> _reportProgress)
         {
-            return FindShortestRouteBetween(_fromCity, _toCity, _mode, _reportProgress);
+            return await Task.Run(() => FindShortestRouteBetween(_fromCity, _toCity, _mode, _reportProgress));
         }
 
         public async Task<List<Link>> FindShortestRouteBetweenAsync(string _fromCity, string _toCity, TransportMode _mode)
         {
-            return FindShortestRouteBetween(_fromCity, _toCity, _mode);
+            return await FindShortestRouteBetweenAsync(_fromCity, _toCity, _mode, null);
         }
 
         private IEnumerable<Link> ConvertListOfCitiesToListOfLinks(List<City> citiesEnRoute)

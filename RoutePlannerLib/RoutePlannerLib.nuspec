@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Ch.Fhnw.Ecnf.JFLW.RoutePlannerLib</id>
+        <version>1.0.0</version>
+        <title>Routeplanner library from module ecnf (with readme)</title>
+        <authors>Julian Fisch,Lukas Walter</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Crazy routeplanner</description>
+        <summary />
+    </metadata>
+	<files>
+        <file src="readme.txt" target="" />
+    </files>
+</package>
