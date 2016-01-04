@@ -5,6 +5,7 @@ using System.Threading;
 using System.Linq;
 using Fhnw.Ecnf.RoutePlanner.RoutePlannerLib;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 {
@@ -86,7 +87,6 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                 traceSource.Flush();
                 throw (e);
             }
-            return -1;
         }
 
         public City[] FindCities(TransportMode transportMode)
@@ -97,17 +97,12 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                 .ToArray();
         }
 
-        //public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode)
-        //{
-        //          RouteRequested?.Invoke(this, new RouteRequestEventArgs(cities[_fromCity], cities[_toCity], _mode));
-        //          return new List<Link>();
-        //}
-
         #region Lab04: Dijkstra implementation
-        public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode)
+        public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode, IProgress<string> _reportProgress)
         {
             //inform listeners
             RouteRequested?.Invoke(this, new RouteRequestEventArgs(cities[_fromCity], cities[_toCity], _mode));
+            if (_reportProgress != null) { _reportProgress.Report("Route request done"); }
 
             //use dijkstra's algorithm to look for all single-source shortest paths
             var visited = new Dictionary<City, DijkstraNode>();
@@ -119,6 +114,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                     Distance = 0
                 }
             });
+            if (_reportProgress != null) { _reportProgress.Report("Creating dijkstra nodes done"); }
 
             while (pending.Any())
             {
@@ -142,16 +138,34 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
             //did we find any route?
             if (!visited.ContainsKey(cities[_toCity]))
                 return null;
+            if (_reportProgress != null) { _reportProgress.Report("Finding route done"); }
 
             //create a list of cities that we passed along the way
             var citiesEnRoute = new List<City>();
             for (var c = cities[_toCity]; c != null; c = visited[c].PreviousCity)
                 citiesEnRoute.Add(c);
             citiesEnRoute.Reverse();
+            if (_reportProgress != null) { _reportProgress.Report("Creating city list done"); }
 
             //convert that city-list into a list of links
             IEnumerable<Link> paths = ConvertListOfCitiesToListOfLinks(citiesEnRoute);
+            if (_reportProgress != null) { _reportProgress.Report("Converting city list to link list done"); }
             return paths.ToList();
+        }
+
+        public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode)
+        {
+            return FindShortestRouteBetween(_fromCity, _toCity, _mode, null);
+        }
+
+        public async Task<List<Link>> FindShortestRouteBetweenAsync(string _fromCity, string _toCity, TransportMode _mode, IProgress<string> _reportProgress)
+        {
+            return FindShortestRouteBetween(_fromCity, _toCity, _mode, _reportProgress);
+        }
+
+        public async Task<List<Link>> FindShortestRouteBetweenAsync(string _fromCity, string _toCity, TransportMode _mode)
+        {
+            return FindShortestRouteBetween(_fromCity, _toCity, _mode);
         }
 
         private IEnumerable<Link> ConvertListOfCitiesToListOfLinks(List<City> citiesEnRoute)

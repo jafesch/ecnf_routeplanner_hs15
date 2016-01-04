@@ -32,7 +32,6 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                     cities.AddRange(c);
                     traceSource.TraceInformation("ReadCities ended");
                     traceSource.Flush();
-                    traceSource.Close();
                     return c.Count();
                 }
             }
@@ -79,7 +78,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         public IEnumerable<City> FindNeighbours(WayPoint _location, double _distance)
         {
-            return cities.Where(c => _location.Distance(c.Location) <= _distance).ToList();
+            return cities.Where(c => _location.Distance(c.Location) <= _distance);
         }
     }
 }

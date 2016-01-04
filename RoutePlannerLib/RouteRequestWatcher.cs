@@ -40,14 +40,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 
         public int GetCityRequests(City _city)
         {
-            try
-            {
-                return count[_city];
-            }
-            catch
-            {
-                return 0;
-            }
+            return count[_city];
         }
     }
 }

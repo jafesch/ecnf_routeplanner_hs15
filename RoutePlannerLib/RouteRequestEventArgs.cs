@@ -8,8 +8,8 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
 {
     public class RouteRequestEventArgs : EventArgs
     {
-        public City FromCity;
-        public City ToCity;
+        public City FromCity { get; }
+        public City ToCity { get; }
         public TransportMode Mode;
 
         public RouteRequestEventArgs(City fromCity, City toCity, TransportMode mode)
