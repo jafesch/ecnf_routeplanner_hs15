@@ -15,7 +15,7 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
         private static readonly TraceSource traceSource = new TraceSource("Cities");
         private static readonly TraceSource traceSourceErrors = new TraceSource("CitiesErrors");
 
-        List<City> cities = new List<City>();
+        public List<City> cities = new List<City>();
         public int Count { get { return cities.Count; } }
 
         public int ReadCities(string _filename)
@@ -41,7 +41,6 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                 traceSource.Flush();
                 throw(e);
             }
-            return -1;
         }
 
         public City this[int i]

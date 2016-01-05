@@ -97,6 +97,31 @@ namespace Fhnw.Ecnf.RoutePlanner.RoutePlannerLib
                 .ToArray();
         }
 
+        public IEnumerable<TransportMode> AllTransportModes()
+        {
+            return Enum.GetValues(typeof(TransportMode)).Cast<TransportMode>();
+        }
+
+        public List<List<Link>> FindAllShortestRoutes()
+        {
+            return AllTransportModes()
+                 .SelectMany(tm => Enumerable.Range(0, cities.Count)
+                     .SelectMany(n => Enumerable.Range(0, cities.Count)
+                         .Select(k => FindShortestRouteBetween(cities[n].Name, cities[k].Name, tm))
+                     )
+                 ).ToList();
+        }
+
+        public List<List<Link>> FindAllShortestRoutesParallel()
+        {
+            return AllTransportModes()
+                .SelectMany(tm => Enumerable.Range(0, cities.Count)
+                    .SelectMany(n => Enumerable.Range(0, cities.Count)
+                        .Select(k => FindShortestRouteBetween(cities[n].Name, cities[k].Name, tm)).AsParallel()
+                    )
+                ).ToList();
+        }
+
         #region Lab04: Dijkstra implementation
         public List<Link> FindShortestRouteBetween(string _fromCity, string _toCity, TransportMode _mode, IProgress<string> _reportProgress)
         {
